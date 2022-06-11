@@ -1,1 +1,147 @@
+#include QMK_KEYBOARD_H
+
+enum custom_keycodes {
+    NC1 = SAFE_RANGE,
+    KVF,
+    EMJ,
+    MH1,
+    MR1,
+    NM1,
+    BS1,
+    PW1,
+    BEST,
+    EMAIL,
+    GMAIL,
+    ST1,
+    PW2,
+};
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT_65_ansi_blocker(
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_BSPC, KC_DEL,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_LBRC, KC_RBRC, KC_BSLS, KC_HOME,
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,  KC_PGUP,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,          KC_UP,   KC_PGDN,
+        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             MO(2), MO(1),   KC_LEFT, KC_DOWN, KC_RGHT
+    ),
+    
+    [1] = LAYOUT_65_ansi_blocker(
+        NC1, BEST, PW1, PW2, KVF, EMJ, MH1, MR1, NM1, BS1, ST1,  _______, _______, _______, _______,
+        EMAIL, GMAIL, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______, _______,
+        _______, LGUI(LSFT(KC_A)), LGUI(LSFT(KC_V)), _______, LGUI(LSFT(KC_Z)), LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), LGUI(KC_TAB), _______, _______,          LCTL(KC_1), _______,
+        _______, _______, _______,                            _______,                            _______, _______, LCTL(KC_LEFT), LCTL(KC_S), LCTL(KC_RGHT)
+    ),
+
+};
+
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    
+    switch (keycode) {
+        case NC1:
+            if (record->event.pressed) {
+                // when keycode NC1 is pressed
+                SEND_STRING("No Conflicts.");
+            } else {
+                // when keycode NC1 is released
+            }
+            break;
+            
+        case KVF:
+            if (record->event.pressed) {
+                SEND_STRING("Kassandra Vanessa Flores");
+            } else {
+                    }
+                    break;
+        case EMJ:
+            if (record->event.pressed) {
+                SEND_STRING("Heriberto Morales Jr.");
+            } else {
+                    }
+                    break;
+        case MH1:
+            if (record->event.pressed) {
+                SEND_STRING("Mireya");
+            } else {
+                    }
+                    break;
+        
+        case MR1:
+            if (record->event.pressed) {
+                SEND_STRING("Moni");
+            } else {
+                    }
+                    break;
+        case NM1:
+            if (record->event.pressed) {
+                SEND_STRING("Norma");
+            } else {
+                    }
+                    break;
+        
+        case BS1:
+            if (record->event.pressed) {
+                SEND_STRING("Blanca");
+            } else {
+                    }
+                    break;
+        
+        case PW1:
+            if (record->event.pressed) {
+                SEND_STRING("y8tk(TQW");
+            } else {
+                    }
+                    break;
+       
+        case BEST:
+            if (record->event.pressed) {
+                SEND_STRING("Best,");
+            } else {
+                    }
+                    break;
+            
+            switch (keycode) {
+                case EMAIL:
+                    if (record->event.pressed) {
+                        // when keycode NC1 is pressed
+                        SEND_STRING("KFlores@LangleyBanack.com");
+                    } else {
+                        // when keycode NC1 is released
+                    }
+                    break;
+                    
+            switch (keycode) {
+                case GMAIL:
+                    if (record->event.pressed) {
+                        // when keycode NC1 is pressed
+                        SEND_STRING("KassandraVFlores@Gmail.com");
+                        } else {
+                        // when keycode NC1 is released
+                            }
+                    break;
+                    
+            switch (keycode) {
+                case ST1:
+                    if (record->event.pressed) {
+                        // when keycode NC1 is pressed
+                        SEND_STRING("Storm");
+                        } else {
+                        // when keycode NC1 is released
+                                    }
+                    break;
+                
+            switch (keycode) {
+                case PW2:
+                    if (record->event.pressed) {
+                    SEND_STRING("L&B1");
+                    } else {
+                            }
+                    break;
+            }
+      
+            return true;
+                    
+            };
+
 
